@@ -63,9 +63,9 @@ class _OnBoardState extends State<OnBoard> {
         actions: [
           TextButton(
             onPressed: () {
-              // _storeOnboardInfo();
-              // Navigator.pushReplacement(
-              //     context, MaterialPageRoute(builder: (context) => Home()));
+              _storeOnboardInfo();
+              Navigator.pushReplacement(context,
+                  MaterialPageRoute(builder: (context) => SignInPage()));
             },
             child: Text("Skip", style: secondaryTextStyle),
           )
@@ -121,12 +121,11 @@ class _OnBoardState extends State<OnBoard> {
                       style: primaryTextStyle.copyWith(fontSize: 12)),
                   InkWell(
                     onTap: () async {
-                      // print(index);
-                      // if (index == screens.length - 1) {
-                      //   await _storeOnboardInfo();
-                      //   Navigator.pushReplacement(context,
-                      //       MaterialPageRoute(builder: (context) => Home()));
-                      // }
+                      print(index);
+                      if (index == screens.length - 1) {
+                        await _storeOnboardInfo();
+                        Navigator.pushNamed(context, '/sign-in');
+                      }
 
                       _pageController.nextPage(
                         duration: Duration(milliseconds: 300),
