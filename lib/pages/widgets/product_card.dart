@@ -22,7 +22,7 @@ class ProductCard extends StatelessWidget {
               height: 30,
             ),
             Image.asset(
-              'assets/images_Product.png',
+              'assets/products/pnc_550.png',
               width: 215,
               height: 150,
               fit: BoxFit.contain,
@@ -33,14 +33,14 @@ class ProductCard extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
-                    'Unknown',
+                    'Mobile',
                     style: secondaryTextStyle.copyWith(fontSize: 12),
                   ),
                   SizedBox(
                     height: 6,
                   ),
                   Text(
-                    'Product 1',
+                    'PNC-550',
                     style: blackTextStyle.copyWith(
                         fontSize: 18, fontWeight: semiBold),
                     overflow: TextOverflow.ellipsis,
@@ -49,7 +49,7 @@ class ProductCard extends StatelessWidget {
                     height: 6,
                   ),
                   Text(
-                    'Rp. 500.000',
+                    'Rp. 18.000.000',
                     style: priceTextStyle.copyWith(fontWeight: medium),
                   )
                 ],

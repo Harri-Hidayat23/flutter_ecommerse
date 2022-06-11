@@ -21,7 +21,7 @@ class HomePage extends StatelessWidget {
                         fontSize: 24, fontWeight: semiBold),
                   ),
                   Text(
-                    '@fajarsidik',
+                    '@fajarsidiq',
                     style: subtitleTextStyle.copyWith(fontSize: 16),
                   )
                 ],
@@ -69,7 +69,7 @@ class HomePage extends StatelessWidget {
                     color: transparanColor,
                     border: Border.all(color: subtitleColor)),
                 child: Text(
-                  'All Product',
+                  'Mobile',
                   style: primaryTextStyle.copyWith(
                       fontSize: 13, fontWeight: medium),
                 ),
@@ -82,7 +82,20 @@ class HomePage extends StatelessWidget {
                     color: transparanColor,
                     border: Border.all(color: subtitleColor)),
                 child: Text(
-                  'All Product',
+                  'Handheld',
+                  style: primaryTextStyle.copyWith(
+                      fontSize: 13, fontWeight: medium),
+                ),
+              ),
+              Container(
+                margin: EdgeInsets.only(right: 16),
+                padding: EdgeInsets.symmetric(horizontal: 12, vertical: 10),
+                decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(12),
+                    color: transparanColor,
+                    border: Border.all(color: subtitleColor)),
+                child: Text(
+                  'Handheld Atex',
                   style: primaryTextStyle.copyWith(
                       fontSize: 13, fontWeight: medium),
                 ),
@@ -115,7 +128,12 @@ class HomePage extends StatelessWidget {
                   width: defaultMargin,
                 ),
                 Row(
-                  children: [ProductCard(), ProductCard(), ProductCard()],
+                  children: [
+                    ProductCard(),
+                    ProductCard(),
+                    ProductCard(),
+                    ProductCard()
+                  ],
                 )
               ],
             ),

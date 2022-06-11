@@ -16,7 +16,7 @@ class ChatTile extends StatelessWidget {
             Row(
               children: [
                 Image.asset(
-                  'assets/image_shop_logo.png',
+                  'assets/products/jkb_shop.png',
                   width: 54,
                 ),
                 SizedBox(
@@ -27,11 +27,11 @@ class ChatTile extends StatelessWidget {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Text(
-                        'Hydra Bintang Jaya Utama',
+                        'JKB Shop',
                         style: primaryTextStyle.copyWith(fontSize: 15),
                       ),
                       Text(
-                        'Is this item available?adajadnkwnbjbjjrbfrjebrfbbfjrfbjrbfbrjhebfbrfrhbf',
+                        'Is this item available?',
                         style: secondaryTextStyle.copyWith(fontWeight: light),
                         overflow: TextOverflow.ellipsis,
                       )

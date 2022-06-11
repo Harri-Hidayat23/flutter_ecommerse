@@ -17,7 +17,7 @@ class ProductTile extends StatelessWidget {
             ClipRRect(
                 borderRadius: BorderRadius.circular(5),
                 child: Image.asset(
-                  'assets/images_Product.png',
+                  'assets/products/md_788g.png',
                   width: 120,
                   height: 120,
                 )),
@@ -29,14 +29,14 @@ class ProductTile extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
-                    'Categories',
+                    'Handheld Atex',
                     style: secondaryTextStyle.copyWith(fontSize: 12),
                   ),
                   SizedBox(
                     height: 6,
                   ),
                   Text(
-                    'New Product',
+                    'MD-788G ',
                     style: primaryTextStyle.copyWith(
                         fontSize: 16, fontWeight: semiBold),
                   ),

@@ -15,7 +15,7 @@ class WishlistCard extends StatelessWidget {
           ClipRRect(
             borderRadius: BorderRadius.circular(12),
             child: Image.asset(
-              'assets/images_Product.png',
+              'assets/products/pd_788g.png',
               width: 60,
             ),
           ),
@@ -27,14 +27,14 @@ class WishlistCard extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
-                  'Product 1',
+                  'PD-788G',
                   style: primaryTextStyle.copyWith(fontWeight: semiBold),
                 ),
                 SizedBox(
                   width: 2,
                 ),
                 Text(
-                  'Rp.123.456',
+                  'Rp.9.000.000',
                   style: priceTextStyle,
                 )
               ],

@@ -32,7 +32,8 @@ class ChatBubble extends StatelessWidget {
               children: [
                 ClipRRect(
                     borderRadius: BorderRadius.circular(12),
-                    child: Image.asset('assets/images_Product.png', width: 70)),
+                    child:
+                        Image.asset('assets/products/pdc550.png', width: 70)),
                 SizedBox(
                   width: 8,
                 ),
@@ -41,14 +42,14 @@ class ChatBubble extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
-                      'Product 1',
+                      'PDC-550',
                       style: primaryTextStyle,
                     ),
                     SizedBox(
                       height: 4,
                     ),
                     Text(
-                      'Rp.500.000',
+                      'Rp.18.000.000',
                       style: priceTextStyle.copyWith(fontWeight: medium),
                     ),
                   ],

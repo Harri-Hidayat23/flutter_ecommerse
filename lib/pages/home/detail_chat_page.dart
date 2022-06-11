@@ -13,7 +13,7 @@ class DetailChatPage extends StatelessWidget {
           title: Row(
             children: [
               Image.asset(
-                'assets/image_shop_logo.png',
+                'assets/products/jkb_shop_online.png',
                 width: 50,
               ),
               SizedBox(
@@ -24,7 +24,7 @@ class DetailChatPage extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
-                      'Bintang Jaya Hydra Utama',
+                      'JKB Shop',
                       style: primaryTextStyle.copyWith(
                           fontWeight: medium, fontSize: 14),
                       overflow: TextOverflow.ellipsis,
@@ -60,7 +60,7 @@ class DetailChatPage extends StatelessWidget {
             ClipRRect(
               borderRadius: BorderRadius.circular(12),
               child: Image.asset(
-                'assets/images_Product.png',
+                'assets/products/pdc550.png',
                 width: 54,
               ),
             ),
@@ -73,7 +73,7 @@ class DetailChatPage extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
-                    'Product 1',
+                    'PDC-550',
                     style: primaryTextStyle,
                     overflow: TextOverflow.ellipsis,
                   ),
@@ -81,7 +81,7 @@ class DetailChatPage extends StatelessWidget {
                     height: 2,
                   ),
                   Text(
-                    'Rp.500.000',
+                    'Rp.18.000.000',
                     style: priceTextStyle.copyWith(fontWeight: medium),
                   ),
                 ],
@@ -148,7 +148,7 @@ class DetailChatPage extends StatelessWidget {
           ChatBubble(
             hasProduct: false,
             isSender: false,
-            text: 'Good night, This item is only available in size 42 and 43',
+            text: 'Good night, This item is available',
           ),
           ChatBubble(
             isSender: true,

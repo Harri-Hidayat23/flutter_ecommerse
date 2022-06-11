@@ -9,21 +9,19 @@ class ProductPage extends StatefulWidget {
 
 class _ProductPageState extends State<ProductPage> {
   List images = [
-    'assets/images_Product.png',
-    'assets/images_Product.png',
-    'assets/images_Product.png'
+    'assets/products/pnc_550.png',
+    'assets/products/pnc_550.png',
+    'assets/products/pnc_550.png'
   ];
 
   List familiarProduct = [
-    'assets/images_Product.png',
-    'assets/images_Product.png',
-    'assets/images_Product.png',
-    'assets/images_Product.png',
-    'assets/images_Product.png',
-    'assets/images_Product.png',
-    'assets/images_Product.png',
-    'assets/images_Product.png',
-    'assets/images_Product.png'
+    'assets/products/product1.png',
+    'assets/products/product2.png',
+    'assets/products/product3.png',
+    'assets/products/product4.png',
+    'assets/products/product5.png',
+    'assets/products/product6.png',
+    'assets/products/product7.png',
   ];
 
   int currentIndex = 0;
@@ -127,12 +125,12 @@ class _ProductPageState extends State<ProductPage> {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Text(
-                          'Product 1',
+                          'PNC-550',
                           style: primaryTextStyle.copyWith(
                               fontSize: 18, fontWeight: semiBold),
                         ),
                         Text(
-                          'Categories',
+                          'Mobile',
                           style: secondaryTextStyle.copyWith(fontSize: 12),
                         ),
                       ],
@@ -161,7 +159,7 @@ class _ProductPageState extends State<ProductPage> {
                     style: primaryTextStyle,
                   ),
                   Text(
-                    'Rp.500.000',
+                    'Rp.18.000.000',
                     style: priceTextStyle.copyWith(
                         fontSize: 16, fontWeight: semiBold),
                   )
@@ -184,7 +182,7 @@ class _ProductPageState extends State<ProductPage> {
                     height: 12,
                   ),
                   Text(
-                    'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam commodo tincidunt turpis.',
+                    'multi-mode handheld two-way radio device and is capable or functioning as a two-way radio on UHF frequencies (400-470MHz).',
                     style: subtitleTextStyle.copyWith(fontWeight: light),
                     textAlign: TextAlign.justify,
                   )

@@ -42,8 +42,8 @@ dev_dependencies:
     sdk: flutter
 
 flutter_native_splash:
-  color: "#ffffff"
-  image: assets/image_splash.png
+  color: "#1F1D2B"
+  image: assets/jkbpng.png
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
 # The following section is specific to Flutter.
@@ -57,6 +57,7 @@ flutter:
   # To add assets to your application, add an assets section, like this:
   assets:
     - assets/
+    - assets/products/
   #   - images/a_dot_ham.jpeg
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.
