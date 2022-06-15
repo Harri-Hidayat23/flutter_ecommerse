@@ -5,6 +5,9 @@ class ProfilePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    AuthProvider authProvider = Provider.of<AuthProvider>(context);
+    UserModel user = authProvider.user;
+
     header() {
       return AppBar(
         backgroundColor: bgColor1,
@@ -15,8 +18,8 @@ class ProfilePage extends StatelessWidget {
           padding: EdgeInsets.all(defaultMargin),
           child: Row(
             children: [
-              Image.asset(
-                'assets/image_user.png',
+              Image.network(
+                '${user.profilePhotoUrl}',
                 width: 64,
               ),
               SizedBox(width: 16),
@@ -25,12 +28,12 @@ class ProfilePage extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
-                    'Hello, Fajar',
+                    'Hello, ${user.name}',
                     style: primaryTextStyle.copyWith(
                         fontSize: 24, fontWeight: semiBold),
                   ),
                   Text(
-                    '@fajarsidik',
+                    '@${user.username}',
                     style: subtitleTextStyle.copyWith(fontSize: 16),
                   )
                 ],

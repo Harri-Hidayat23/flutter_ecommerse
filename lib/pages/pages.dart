@@ -3,8 +3,10 @@ import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_ecommerse/Models/model.dart';
 import 'package:flutter_ecommerse/pages/widgets/widget.dart';
+import 'package:flutter_ecommerse/providers/provider.dart';
 import 'package:flutter_ecommerse/shared/shared.dart';
 import 'package:flutter_ecommerse/wrapper.dart';
+import 'package:provider/provider.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 part 'onboard.dart';
