@@ -34,6 +34,8 @@ dependencies:
     sdk: flutter
   flutter_native_splash: ^2.0.1
   google_fonts: ^3.0.1
+  http: ^0.13.4
+  provider: ^6.0.3
   shared_preferences: ^2.0.15
 
 dev_dependencies:
@@ -44,6 +46,7 @@ dev_dependencies:
 flutter_native_splash:
   color: "#1F1D2B"
   image: assets/jkbpng.png
+
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
 # The following section is specific to Flutter.
