@@ -1,13 +1,16 @@
 part of 'widget.dart';
 
 class ProductTile extends StatelessWidget {
-  const ProductTile({Key? key}) : super(key: key);
+  // const ProductTile({Key? key}) : super(key: key);
+  final ProductModel product;
+  ProductTile(this.product);
 
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () {
-        Navigator.pushNamed(context, '/product');
+        Navigator.push(context,
+            MaterialPageRoute(builder: (context) => ProductPage(product)));
       },
       child: Container(
         margin: EdgeInsets.only(
@@ -15,9 +18,9 @@ class ProductTile extends StatelessWidget {
         child: Row(
           children: [
             ClipRRect(
-                borderRadius: BorderRadius.circular(5),
-                child: Image.asset(
-                  'assets/products/md_788g.png',
+                borderRadius: BorderRadius.circular(20),
+                child: Image.network(
+                  '${product.galleries[0].url}',
                   width: 120,
                   height: 120,
                 )),
@@ -29,22 +32,23 @@ class ProductTile extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
-                    'Handheld Atex',
+                    '${product.category?.name}',
                     style: secondaryTextStyle.copyWith(fontSize: 12),
                   ),
                   SizedBox(
                     height: 6,
                   ),
                   Text(
-                    'MD-788G ',
+                    '${product.name}',
                     style: primaryTextStyle.copyWith(
                         fontSize: 16, fontWeight: semiBold),
+                    maxLines: 1,
                   ),
                   SizedBox(
                     height: 6,
                   ),
                   Text(
-                    'Rp. 500.000',
+                    '${product.price}',
                     style: priceTextStyle.copyWith(fontWeight: medium),
                   )
                 ],

@@ -1,10 +1,15 @@
 part of 'widget.dart';
 
 class WishlistCard extends StatelessWidget {
-  const WishlistCard({Key? key}) : super(key: key);
+  // const WishlistCard({Key? key}) : super(key: key);
+
+  final ProductModel product;
+  WishlistCard(this.product);
 
   @override
   Widget build(BuildContext context) {
+    WishlistProvider wishlistProvider = Provider.of<WishlistProvider>(context);
+
     return Container(
       margin: EdgeInsets.only(top: 20),
       padding: EdgeInsets.only(top: 10, left: 12, right: 14, bottom: 20),
@@ -14,8 +19,8 @@ class WishlistCard extends StatelessWidget {
         children: [
           ClipRRect(
             borderRadius: BorderRadius.circular(12),
-            child: Image.asset(
-              'assets/products/pd_788g.png',
+            child: Image.network(
+              '${product.galleries[0].url}',
               width: 60,
             ),
           ),
@@ -27,22 +32,27 @@ class WishlistCard extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
-                  'PD-788G',
+                  '${product.name}',
                   style: primaryTextStyle.copyWith(fontWeight: semiBold),
                 ),
                 SizedBox(
                   width: 2,
                 ),
                 Text(
-                  'Rp.9.000.000',
+                  'Rp. ${product.price}',
                   style: priceTextStyle,
                 )
               ],
             ),
           ),
-          Image.asset(
-            'assets/wishlist_round.png',
-            width: 34,
+          GestureDetector(
+            onTap: () {
+              wishlistProvider.setProduct(product);
+            },
+            child: Image.asset(
+              'assets/wishlist_round.png',
+              width: 34,
+            ),
           )
         ],
       ),

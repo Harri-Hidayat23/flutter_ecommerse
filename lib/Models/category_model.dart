@@ -2,9 +2,9 @@ part of 'model.dart';
 
 class CategoryModel {
   int? id;
-  String? name;
+  late String name;
 
-  CategoryModel({this.id, this.name});
+  CategoryModel({this.id, required this.name});
 
   CategoryModel.fromJson(Map<String, dynamic> json) {
     id = json['id'];

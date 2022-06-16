@@ -1,7 +1,10 @@
 part of 'pages.dart';
 
 class ProductPage extends StatefulWidget {
-  const ProductPage({Key? key}) : super(key: key);
+  // const ProductPage({Key? key}) : super(key: key);
+
+  final ProductModel product;
+  ProductPage(this.product);
 
   @override
   State<ProductPage> createState() => _ProductPageState();
@@ -11,7 +14,7 @@ class _ProductPageState extends State<ProductPage> {
   List images = [
     'assets/products/pnc_550.png',
     'assets/products/pnc_550.png',
-    'assets/products/pnc_550.png'
+    'assets/products/pnc_550.png',
   ];
 
   List familiarProduct = [
@@ -25,10 +28,11 @@ class _ProductPageState extends State<ProductPage> {
   ];
 
   int currentIndex = 0;
-  bool isWishlist = false;
 
   @override
   Widget build(BuildContext context) {
+    WishlistProvider wishlistProvider = Provider.of<WishlistProvider>(context);
+
     Future<void> showSuccessDialog() async {
       return showDialog(
           context: context,
@@ -131,9 +135,9 @@ class _ProductPageState extends State<ProductPage> {
             ),
           ),
           CarouselSlider(
-              items: images
-                  .map((image) => Image.asset(
-                        image,
+              items: widget.product.galleries
+                  .map((image) => Image.network(
+                        '${image.url}',
                         width: MediaQuery.of(context).size.width,
                         height: 310,
                         fit: BoxFit.contain,
@@ -185,12 +189,12 @@ class _ProductPageState extends State<ProductPage> {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Text(
-                          'PNC-550',
+                          '${widget.product.name}',
                           style: primaryTextStyle.copyWith(
                               fontSize: 18, fontWeight: semiBold),
                         ),
                         Text(
-                          'Mobile',
+                          '${widget.product.category?.name}',
                           style: secondaryTextStyle.copyWith(fontSize: 12),
                         ),
                       ],
@@ -198,10 +202,9 @@ class _ProductPageState extends State<ProductPage> {
                   ),
                   GestureDetector(
                     onTap: () {
-                      setState(() {
-                        isWishlist = !isWishlist;
-                      });
-                      if (isWishlist) {
+                      wishlistProvider.setProduct(widget.product);
+
+                      if (wishlistProvider.isWishlist(widget.product)) {
                         ScaffoldMessenger.of(context).showSnackBar(SnackBar(
                             backgroundColor: secondaryColor,
                             content: Text(
@@ -218,7 +221,7 @@ class _ProductPageState extends State<ProductPage> {
                       }
                     },
                     child: Image.asset(
-                      isWishlist
+                      wishlistProvider.isWishlist(widget.product)
                           ? 'assets/button_whistlist_blue.png'
                           : 'assets/button_whistlist.png',
                       width: 46,
@@ -243,7 +246,7 @@ class _ProductPageState extends State<ProductPage> {
                     style: primaryTextStyle,
                   ),
                   Text(
-                    'Rp.18.000.000',
+                    '${widget.product.price}',
                     style: priceTextStyle.copyWith(
                         fontSize: 16, fontWeight: semiBold),
                   )
@@ -266,7 +269,7 @@ class _ProductPageState extends State<ProductPage> {
                     height: 12,
                   ),
                   Text(
-                    'multi-mode handheld two-way radio device and is capable or functioning as a two-way radio on UHF frequencies (400-470MHz).',
+                    '${widget.product.description}',
                     style: subtitleTextStyle.copyWith(fontWeight: light),
                     textAlign: TextAlign.justify,
                   )
