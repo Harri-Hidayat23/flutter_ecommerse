@@ -18,9 +18,12 @@ class ProfilePage extends StatelessWidget {
           padding: EdgeInsets.all(defaultMargin),
           child: Row(
             children: [
-              Image.network(
-                '${user.profilePhotoUrl}',
-                width: 64,
+              ClipRRect(
+                borderRadius: BorderRadius.circular(50),
+                child: Image.network(
+                  '${user.profilePhotoUrl}',
+                  width: 64,
+                ),
               ),
               SizedBox(width: 16),
               Expanded(
@@ -30,7 +33,7 @@ class ProfilePage extends StatelessWidget {
                   Text(
                     'Hello, ${user.name}',
                     style: primaryTextStyle.copyWith(
-                        fontSize: 24, fontWeight: semiBold),
+                        fontSize: 20, fontWeight: semiBold),
                   ),
                   Text(
                     '@${user.username}',

@@ -1,7 +1,9 @@
 part of 'services.dart';
 
 class AuthService {
-  String baseUrl = 'http://shamo-backend.buildwithangga.id/api';
+  // String baseUrl = 'http://shamo-backend.buildwithangga.id/api';
+
+  String baseUrl = 'http://jaringan-komunikasi.my.id/api';
 
   Future<UserModel> register(
       {required String name,

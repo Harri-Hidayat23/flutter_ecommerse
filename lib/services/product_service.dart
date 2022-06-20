@@ -1,7 +1,9 @@
 part of 'services.dart';
 
 class ProductService {
-  String baseUrl = 'http://shamo-backend.buildwithangga.id/api';
+  // String baseUrl = 'http://shamo-backend.buildwithangga.id/api';
+
+  String baseUrl = 'http://jaringan-komunikasi.my.id/api';
 
   Future<List<ProductModel>> getProducts() async {
     var url = '$baseUrl/products';

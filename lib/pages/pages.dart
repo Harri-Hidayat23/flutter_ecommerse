@@ -12,5 +12,5 @@ import 'package:shared_preferences/shared_preferences.dart';
 part 'onboard.dart';
 part 'sign_in_page.dart';
 part 'sign_up_page.dart';
-part 'produt_page.dart';
+part 'product_page.dart';
 part 'cart_page.dart';
