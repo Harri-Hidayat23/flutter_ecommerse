@@ -2,18 +2,18 @@ part of 'model.dart';
 
 class ProductModel {
   int? id;
-  String? name;
+  String name;
   double? price;
   String? description;
   String? tags;
   CategoryModel? category;
   DateTime? createdAt;
   DateTime? updateAt;
-  late List<GalleryModel> galleries;
+  List<GalleryModel> galleries = [];
 
   ProductModel(
       {this.id,
-      this.name,
+      required this.name,
       this.price,
       this.description,
       this.tags,
@@ -22,7 +22,7 @@ class ProductModel {
       this.updateAt,
       required this.galleries});
 
-  ProductModel.fromJson(Map<String, dynamic> json) {
+  ProductModel.fromJson(Map<String?, dynamic> json) {
     id = json['id'];
     name = json['name'];
     price = double.parse(json['price'].toString());

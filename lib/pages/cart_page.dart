@@ -5,6 +5,8 @@ class CartPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    CartProvider cartProvider = Provider.of<CartProvider>(context);
+
     header() {
       return AppBar(
         backgroundColor: bgColor1,
@@ -65,7 +67,7 @@ class CartPage extends StatelessWidget {
     Widget conten() {
       return ListView(
         padding: EdgeInsets.symmetric(horizontal: defaultMargin),
-        children: [CartCard()],
+        children: cartProvider.carts.map((cart) => CartCard(cart)).toList(),
       );
     }
 
@@ -84,7 +86,7 @@ class CartPage extends StatelessWidget {
                     style: primaryTextStyle,
                   ),
                   Text(
-                    'Rp.18.000.000',
+                    '\$ ${cartProvider.totalPrice()}',
                     style:
                         priceTextStyle.copyWith(fontSize: 16, fontWeight: bold),
                   )

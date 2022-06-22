@@ -1,10 +1,10 @@
 part of 'model.dart';
 
 class GalleryModel {
-  int? id;
-  String? url;
+  late int id;
+  late String url;
 
-  GalleryModel({this.id, this.url});
+  GalleryModel({required this.id, required this.url});
 
   GalleryModel.fromJson(Map<String, dynamic> json) {
     id = json['id'];

@@ -32,6 +32,7 @@ class _ProductPageState extends State<ProductPage> {
   @override
   Widget build(BuildContext context) {
     WishlistProvider wishlistProvider = Provider.of<WishlistProvider>(context);
+    CartProvider cartProvider = Provider.of<CartProvider>(context);
 
     Future<void> showSuccessDialog() async {
       return showDialog(
@@ -79,7 +80,9 @@ class _ProductPageState extends State<ProductPage> {
                                 backgroundColor: primaryColor,
                                 shape: RoundedRectangleBorder(
                                     borderRadius: BorderRadius.circular(12))),
-                            onPressed: () {},
+                            onPressed: () {
+                              Navigator.pushNamed(context, '/cart-page');
+                            },
                             child: Text(
                               'View My Cart',
                               style: primaryTextStyle.copyWith(
@@ -332,6 +335,7 @@ class _ProductPageState extends State<ProductPage> {
                       height: 54,
                       child: TextButton(
                           onPressed: () {
+                            cartProvider.addCar(widget.product);
                             showSuccessDialog();
                           },
                           style: TextButton.styleFrom(
